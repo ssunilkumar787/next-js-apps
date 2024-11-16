@@ -5,13 +5,16 @@ const layout = ({
   users,
   revenue,
   notifications,
+  login,
 }: {
   children: React.ReactNode;
   users: React.ReactNode;
   revenue: React.ReactNode;
   notifications: React.ReactNode;
+  login: React.ReactNode;
 }) => {
-  return (
+  const isLoggedIn = true;
+  return isLoggedIn ? (
     <div style={{ display: "flex" }}>
       {children}
       <div style={{ display: "flex", flexDirection: "column" }}>
@@ -20,6 +23,8 @@ const layout = ({
       </div>
       <div>{notifications}</div>
     </div>
+  ) : (
+    login
   );
 };
 
